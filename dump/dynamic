@@ -33,8 +33,8 @@ Disassembly of section .text:
    21f15:	48 81 fb 80 b1 4f 01 	cmp    $0x14fb180,%rbx
    21f1c:	74 38                	je     21f56 <dp::main+0x96>
    21f1e:	0f 31                	rdtsc
-   21f20:	49 89 d5             	mov    %rdx,%r13
-   21f23:	49 89 c7             	mov    %rax,%r15
+   21f20:	49 89 c7             	mov    %rax,%r15
+   21f23:	49 89 d5             	mov    %rdx,%r13
    21f26:	0f 31                	rdtsc
    21f28:	48 81 fb 7f 84 1e 00 	cmp    $0x1e847f,%rbx
    21f2f:	76 e1                	jbe    21f12 <dp::main+0x52>

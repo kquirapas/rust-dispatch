@@ -3,7 +3,7 @@ mod payload;
 use chrono::Local;
 use core::arch::x86_64::_rdtsc;
 use payload::*;
-use std::{fs::File, io::Write, os::linux::raw::stat};
+use std::{fs::File, hint::black_box, io::Write};
 
 /// Ramp up the compute path to remove over time optimizations. (e.g. cache)
 const WARM_UP_ITERATIONS: usize = 2_000_000;
@@ -20,7 +20,7 @@ fn main() {
         let latency = unsafe {
             let start = _rdtsc();
 
-            dynamic_dispatch(&payload_thirty_two);
+            black_box(static_dispatch(&payload_thirty_two));
 
             let end = _rdtsc();
 
@@ -46,7 +46,6 @@ fn main() {
 }
 
 #[allow(unused)]
-#[inline(always)]
 fn static_dispatch(payload: &impl Payload) {
     payload.run()
 }
