@@ -7,13 +7,6 @@ edition = "2024"
 name = "dp"
 path = "main.rs"
 
-# profile.dev already has these optimizations by default
-# this is to explicitly document the intention.
-[profile.no-opts]
-inherits = "dev"
-lto = "off"
-opt-level = 0
-
 [features]
 default = []
 

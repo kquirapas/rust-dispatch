@@ -1,11 +1,10 @@
-.PHONY: run-static run-dynamic
+.PHONY: run dump
 
 all: build
 
 build:
-	cargo build --profile no-opts
-
-run-static:
-	cargo run --profile no-opts
-run-dynamic:
-	cargo run --profile no-opts
+	cargo build --release
+run:
+	cargo run --release
+dump:
+	objdump -d --demangle --disassemble=dp::main target/release/dp > dump/dump
