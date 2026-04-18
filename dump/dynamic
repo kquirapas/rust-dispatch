@@ -4,387 +4,401 @@ target/release/dp:     file format elf64-x86-64
 
 Disassembly of section .text:
 
-0000000000021ec0 <dp::main>:
-   21ec0:	55                   	push   %rbp
-   21ec1:	41 57                	push   %r15
-   21ec3:	41 56                	push   %r14
-   21ec5:	41 55                	push   %r13
-   21ec7:	41 54                	push   %r12
-   21ec9:	53                   	push   %rbx
-   21eca:	48 81 ec 18 01 00 00 	sub    $0x118,%rsp
-   21ed1:	48 c7 44 24 60 00 00 	movq   $0x0,0x60(%rsp)
-   21ed8:	00 00 
-   21eda:	48 c7 44 24 68 08 00 	movq   $0x8,0x68(%rsp)
-   21ee1:	00 00 
-   21ee3:	48 c7 44 24 70 00 00 	movq   $0x0,0x70(%rsp)
-   21eea:	00 00 
-   21eec:	31 db                	xor    %ebx,%ebx
-   21eee:	eb 2e                	jmp    21f1e <dp::main+0x5e>
-   21ef0:	49 c1 e5 20          	shl    $0x20,%r13
-   21ef4:	4d 09 ef             	or     %r13,%r15
-   21ef7:	48 c1 e5 20          	shl    $0x20,%rbp
-   21efb:	49 09 ec             	or     %rbp,%r12
-   21efe:	4d 29 fc             	sub    %r15,%r12
-   21f01:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
-   21f06:	4e 89 24 f0          	mov    %r12,(%rax,%r14,8)
-   21f0a:	49 ff c6             	inc    %r14
-   21f0d:	4c 89 74 24 70       	mov    %r14,0x70(%rsp)
-   21f12:	48 ff c3             	inc    %rbx
-   21f15:	48 81 fb 80 b1 4f 01 	cmp    $0x14fb180,%rbx
-   21f1c:	74 38                	je     21f56 <dp::main+0x96>
-   21f1e:	0f 31                	rdtsc
-   21f20:	49 89 c7             	mov    %rax,%r15
-   21f23:	49 89 d5             	mov    %rdx,%r13
-   21f26:	0f 31                	rdtsc
-   21f28:	48 81 fb 7f 84 1e 00 	cmp    $0x1e847f,%rbx
-   21f2f:	76 e1                	jbe    21f12 <dp::main+0x52>
-   21f31:	48 89 d5             	mov    %rdx,%rbp
-   21f34:	49 89 c4             	mov    %rax,%r12
-   21f37:	4c 8b 74 24 70       	mov    0x70(%rsp),%r14
-   21f3c:	4c 3b 74 24 60       	cmp    0x60(%rsp),%r14
-   21f41:	75 ad                	jne    21ef0 <dp::main+0x30>
-   21f43:	48 8d 7c 24 60       	lea    0x60(%rsp),%rdi
-   21f48:	48 8d 35 49 07 05 00 	lea    0x50749(%rip),%rsi        # 72698 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x388>
-   21f4f:	e8 dc 22 00 00       	call   24230 <alloc::raw_vec::RawVec<T,A>::grow_one>
-   21f54:	eb 9a                	jmp    21ef0 <dp::main+0x30>
-   21f56:	48 8d bc 24 98 00 00 	lea    0x98(%rsp),%rdi
-   21f5d:	00 
-   21f5e:	ff 15 f4 42 05 00    	call   *0x542f4(%rip)        # 76258 <_DYNAMIC+0x2a0>
-   21f64:	8b 84 24 a0 00 00 00 	mov    0xa0(%rsp),%eax
-   21f6b:	89 84 24 c8 00 00 00 	mov    %eax,0xc8(%rsp)
-   21f72:	48 8b 84 24 98 00 00 	mov    0x98(%rsp),%rax
-   21f79:	00 
-   21f7a:	48 89 84 24 c0 00 00 	mov    %rax,0xc0(%rsp)
+0000000000021f00 <dp::main>:
+   21f00:	55                   	push   %rbp
+   21f01:	41 57                	push   %r15
+   21f03:	41 56                	push   %r14
+   21f05:	41 55                	push   %r13
+   21f07:	41 54                	push   %r12
+   21f09:	53                   	push   %rbx
+   21f0a:	48 81 ec 18 01 00 00 	sub    $0x118,%rsp
+   21f11:	48 c7 44 24 60 00 00 	movq   $0x0,0x60(%rsp)
+   21f18:	00 00 
+   21f1a:	48 c7 44 24 68 08 00 	movq   $0x8,0x68(%rsp)
+   21f21:	00 00 
+   21f23:	48 c7 44 24 70 00 00 	movq   $0x0,0x70(%rsp)
+   21f2a:	00 00 
+   21f2c:	31 db                	xor    %ebx,%ebx
+   21f2e:	eb 2e                	jmp    21f5e <dp::main+0x5e>
+   21f30:	49 c1 e4 20          	shl    $0x20,%r12
+   21f34:	4d 09 e7             	or     %r12,%r15
+   21f37:	48 c1 e5 20          	shl    $0x20,%rbp
+   21f3b:	49 09 ed             	or     %rbp,%r13
+   21f3e:	4d 29 fd             	sub    %r15,%r13
+   21f41:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
+   21f46:	4e 89 2c f0          	mov    %r13,(%rax,%r14,8)
+   21f4a:	49 ff c6             	inc    %r14
+   21f4d:	4c 89 74 24 70       	mov    %r14,0x70(%rsp)
+   21f52:	48 ff c3             	inc    %rbx
+   21f55:	48 81 fb 80 b1 4f 01 	cmp    $0x14fb180,%rbx
+   21f5c:	74 76                	je     21fd4 <dp::main+0xd4>
+   21f5e:	0f 31                	rdtsc
+   21f60:	49 89 c7             	mov    %rax,%r15
+   21f63:	49 89 d4             	mov    %rdx,%r12
+   21f66:	48 8d 44 24 07       	lea    0x7(%rsp),%rax
+   21f6b:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+   21f72:	00 
+   21f73:	48 8d 05 ae 07 05 00 	lea    0x507ae(%rip),%rax        # 72728 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x388>
+   21f7a:	48 89 84 24 a8 00 00 	mov    %rax,0xa8(%rsp)
    21f81:	00 
-   21f82:	8b ac 24 a4 00 00 00 	mov    0xa4(%rsp),%ebp
-   21f89:	48 8d 7c 24 54       	lea    0x54(%rsp),%rdi
-   21f8e:	4c 8d b4 24 c0 00 00 	lea    0xc0(%rsp),%r14
-   21f95:	00 
-   21f96:	4c 89 f6             	mov    %r14,%rsi
-   21f99:	89 ea                	mov    %ebp,%edx
-   21f9b:	ff 15 bf 42 05 00    	call   *0x542bf(%rip)        # 76260 <_DYNAMIC+0x2a8>
-   21fa1:	48 8d bc 24 a4 00 00 	lea    0xa4(%rsp),%rdi
-   21fa8:	00 
-   21fa9:	8b 5c 24 54          	mov    0x54(%rsp),%ebx
-   21fad:	f2 0f 10 44 24 58    	movsd  0x58(%rsp),%xmm0
-   21fb3:	0f 29 84 24 80 00 00 	movaps %xmm0,0x80(%rsp)
-   21fba:	00 
-   21fbb:	48 c7 44 24 38 00 00 	movq   $0x0,0x38(%rsp)
-   21fc2:	00 00 
-   21fc4:	48 c7 44 24 40 01 00 	movq   $0x1,0x40(%rsp)
-   21fcb:	00 00 
-   21fcd:	48 c7 44 24 48 00 00 	movq   $0x0,0x48(%rsp)
-   21fd4:	00 00 
-   21fd6:	b8 20 00 00 e0       	mov    $0xe0000020,%eax
-   21fdb:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
-   21fe0:	4c 8d 7c 24 38       	lea    0x38(%rsp),%r15
-   21fe5:	4c 89 7c 24 08       	mov    %r15,0x8(%rsp)
-   21fea:	48 8d 05 d7 02 05 00 	lea    0x502d7(%rip),%rax        # 722c8 <anon.07f4893ba3a8a42e24fb5deb4726c306.0.llvm.1823474535184149785>
-   21ff1:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
-   21ff6:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
-   21ffb:	ff 15 f7 41 05 00    	call   *0x541f7(%rip)        # 761f8 <_DYNAMIC+0x240>
-   22001:	84 c0                	test   %al,%al
-   22003:	0f 85 d1 02 00 00    	jne    222da <dp::main+0x41a>
-   22009:	0f 10 44 24 38       	movups 0x38(%rsp),%xmm0
-   2200e:	0f 29 84 24 c0 00 00 	movaps %xmm0,0xc0(%rsp)
-   22015:	00 
-   22016:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
-   2201b:	48 89 84 24 d0 00 00 	mov    %rax,0xd0(%rsp)
-   22022:	00 
-   22023:	89 9c 24 14 01 00 00 	mov    %ebx,0x114(%rsp)
-   2202a:	c7 84 24 08 01 00 00 	movl   $0x1,0x108(%rsp)
-   22031:	01 00 00 00 
-   22035:	0f 28 84 24 80 00 00 	movaps 0x80(%rsp),%xmm0
-   2203c:	00 
-   2203d:	0f 13 84 24 0c 01 00 	movlps %xmm0,0x10c(%rsp)
-   22044:	00 
-   22045:	89 ac 24 d8 00 00 00 	mov    %ebp,0xd8(%rsp)
-   2204c:	48 8d 05 8d a7 fe ff 	lea    -0x15873(%rip),%rax        # c7e0 <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x590>
-   22053:	48 89 84 24 e0 00 00 	mov    %rax,0xe0(%rsp)
-   2205a:	00 
-   2205b:	48 c7 84 24 e8 00 00 	movq   $0x2,0xe8(%rsp)
-   22062:	00 02 00 00 00 
-   22067:	48 c7 84 24 f0 00 00 	movq   $0x8,0xf0(%rsp)
-   2206e:	00 08 00 00 00 
-   22073:	48 c7 84 24 f8 00 00 	movq   $0x0,0xf8(%rsp)
-   2207a:	00 00 00 00 00 
-   2207f:	c6 84 24 00 01 00 00 	movb   $0x0,0x100(%rsp)
-   22086:	00 
-   22087:	4c 89 74 24 38       	mov    %r14,0x38(%rsp)
-   2208c:	48 8d 05 2d c8 ff ff 	lea    -0x37d3(%rip),%rax        # 1e8c0 <<chrono::format::formatting::DelayedFormat<I> as core::fmt::Display>::fmt>
-   22093:	48 89 44 24 40       	mov    %rax,0x40(%rsp)
-   22098:	48 8d 05 61 05 05 00 	lea    0x50561(%rip),%rax        # 72600 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x2f0>
-   2209f:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
-   220a4:	48 c7 44 24 10 02 00 	movq   $0x2,0x10(%rsp)
-   220ab:	00 00 
-   220ad:	4c 89 7c 24 18       	mov    %r15,0x18(%rsp)
-   220b2:	48 c7 44 24 20 01 00 	movq   $0x1,0x20(%rsp)
-   220b9:	00 00 
-   220bb:	48 c7 44 24 28 00 00 	movq   $0x0,0x28(%rsp)
-   220c2:	00 00 
-   220c4:	48 8d bc 24 a8 00 00 	lea    0xa8(%rsp),%rdi
-   220cb:	00 
-   220cc:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
-   220d1:	ff 15 91 41 05 00    	call   *0x54191(%rip)        # 76268 <_DYNAMIC+0x2b0>
-   220d7:	48 b8 00 00 00 00 b6 	movabs $0x1b600000000,%rax
-   220de:	01 00 00 
-   220e1:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
-   220e6:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%rsp)
-   220ed:	00 
-   220ee:	66 c7 44 24 14 00 00 	movw   $0x0,0x14(%rsp)
-   220f5:	c6 44 24 11 01       	movb   $0x1,0x11(%rsp)
-   220fa:	c6 44 24 14 01       	movb   $0x1,0x14(%rsp)
-   220ff:	c6 44 24 13 01       	movb   $0x1,0x13(%rsp)
-   22104:	4c 8b bc 24 b0 00 00 	mov    0xb0(%rsp),%r15
-   2210b:	00 
-   2210c:	48 8b 8c 24 b8 00 00 	mov    0xb8(%rsp),%rcx
-   22113:	00 
-   22114:	48 8d 7c 24 38       	lea    0x38(%rsp),%rdi
-   22119:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
-   2211e:	4c 89 fa             	mov    %r15,%rdx
-   22121:	ff 15 49 41 05 00    	call   *0x54149(%rip)        # 76270 <_DYNAMIC+0x2b8>
-   22127:	48 8b b4 24 a8 00 00 	mov    0xa8(%rsp),%rsi
-   2212e:	00 
-   2212f:	48 85 f6             	test   %rsi,%rsi
-   22132:	74 0e                	je     22142 <dp::main+0x282>
-   22134:	ba 01 00 00 00       	mov    $0x1,%edx
-   22139:	4c 89 ff             	mov    %r15,%rdi
-   2213c:	ff 15 9e 40 05 00    	call   *0x5409e(%rip)        # 761e0 <_DYNAMIC+0x228>
-   22142:	83 7c 24 38 01       	cmpl   $0x1,0x38(%rsp)
-   22147:	0f 84 b4 01 00 00    	je     22301 <dp::main+0x441>
-   2214d:	8b 44 24 3c          	mov    0x3c(%rsp),%eax
-   22151:	89 44 24 54          	mov    %eax,0x54(%rsp)
-   22155:	48 8d 05 dc 04 05 00 	lea    0x504dc(%rip),%rax        # 72638 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x328>
-   2215c:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
-   22161:	48 c7 44 24 10 01 00 	movq   $0x1,0x10(%rsp)
-   22168:	00 00 
-   2216a:	48 c7 44 24 18 08 00 	movq   $0x8,0x18(%rsp)
-   22171:	00 00 
-   22173:	0f 57 c0             	xorps  %xmm0,%xmm0
-   22176:	0f 11 44 24 20       	movups %xmm0,0x20(%rsp)
-   2217b:	48 8d 7c 24 54       	lea    0x54(%rsp),%rdi
-   22180:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
-   22185:	e8 26 15 00 00       	call   236b0 <std::io::Write::write_fmt>
-   2218a:	48 85 c0             	test   %rax,%rax
-   2218d:	0f 85 9f 01 00 00    	jne    22332 <dp::main+0x472>
-   22193:	48 8b 7c 24 68       	mov    0x68(%rsp),%rdi
-   22198:	4c 8b 6c 24 70       	mov    0x70(%rsp),%r13
-   2219d:	49 83 fd 02          	cmp    $0x2,%r13
-   221a1:	0f 83 b7 01 00 00    	jae    2235e <dp::main+0x49e>
-   221a7:	48 89 bc 24 80 00 00 	mov    %rdi,0x80(%rsp)
-   221ae:	00 
-   221af:	48 8b 44 24 60       	mov    0x60(%rsp),%rax
-   221b4:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
-   221b9:	4d 85 ed             	test   %r13,%r13
-   221bc:	0f 84 87 00 00 00    	je     22249 <dp::main+0x389>
-   221c2:	49 c1 e5 03          	shl    $0x3,%r13
-   221c6:	31 db                	xor    %ebx,%ebx
-   221c8:	4c 8b 35 a9 40 05 00 	mov    0x540a9(%rip),%r14        # 76278 <_DYNAMIC+0x2c0>
-   221cf:	4c 8d 3d 8a 04 05 00 	lea    0x5048a(%rip),%r15        # 72660 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x350>
-   221d6:	48 8d 6c 24 54       	lea    0x54(%rsp),%rbp
-   221db:	4c 8d 64 24 08       	lea    0x8(%rsp),%r12
-   221e0:	48 8b 84 24 80 00 00 	mov    0x80(%rsp),%rax
-   221e7:	00 
-   221e8:	48 8b 04 18          	mov    (%rax,%rbx,1),%rax
-   221ec:	48 89 84 24 98 00 00 	mov    %rax,0x98(%rsp)
-   221f3:	00 
-   221f4:	48 8d 84 24 98 00 00 	lea    0x98(%rsp),%rax
-   221fb:	00 
-   221fc:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
-   22201:	4c 89 74 24 40       	mov    %r14,0x40(%rsp)
-   22206:	4c 89 7c 24 08       	mov    %r15,0x8(%rsp)
-   2220b:	48 c7 44 24 10 02 00 	movq   $0x2,0x10(%rsp)
-   22212:	00 00 
-   22214:	48 c7 44 24 28 00 00 	movq   $0x0,0x28(%rsp)
-   2221b:	00 00 
-   2221d:	48 8d 44 24 38       	lea    0x38(%rsp),%rax
-   22222:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
-   22227:	48 c7 44 24 20 01 00 	movq   $0x1,0x20(%rsp)
-   2222e:	00 00 
-   22230:	48 89 ef             	mov    %rbp,%rdi
-   22233:	4c 89 e6             	mov    %r12,%rsi
-   22236:	e8 75 14 00 00       	call   236b0 <std::io::Write::write_fmt>
-   2223b:	48 85 c0             	test   %rax,%rax
-   2223e:	75 6b                	jne    222ab <dp::main+0x3eb>
-   22240:	48 83 c3 08          	add    $0x8,%rbx
-   22244:	49 39 dd             	cmp    %rbx,%r13
-   22247:	75 97                	jne    221e0 <dp::main+0x320>
-   22249:	48 8b 74 24 78       	mov    0x78(%rsp),%rsi
-   2224e:	48 85 f6             	test   %rsi,%rsi
-   22251:	74 17                	je     2226a <dp::main+0x3aa>
-   22253:	48 c1 e6 03          	shl    $0x3,%rsi
-   22257:	ba 08 00 00 00       	mov    $0x8,%edx
-   2225c:	48 8b bc 24 80 00 00 	mov    0x80(%rsp),%rdi
-   22263:	00 
-   22264:	ff 15 76 3f 05 00    	call   *0x53f76(%rip)        # 761e0 <_DYNAMIC+0x228>
-   2226a:	8b 7c 24 54          	mov    0x54(%rsp),%edi
-   2226e:	ff 15 0c 40 05 00    	call   *0x5400c(%rip)        # 76280 <close@GLIBC_2.2.5>
-   22274:	48 8b b4 24 c0 00 00 	mov    0xc0(%rsp),%rsi
+   21f82:	48 8d 84 24 a0 00 00 	lea    0xa0(%rsp),%rax
+   21f89:	00 
+   21f8a:	48 8b bc 24 a0 00 00 	mov    0xa0(%rsp),%rdi
+   21f91:	00 
+   21f92:	48 8b 84 24 a8 00 00 	mov    0xa8(%rsp),%rax
+   21f99:	00 
+   21f9a:	ff 50 18             	call   *0x18(%rax)
+   21f9d:	0f 31                	rdtsc
+   21f9f:	48 81 fb 7f 84 1e 00 	cmp    $0x1e847f,%rbx
+   21fa6:	76 aa                	jbe    21f52 <dp::main+0x52>
+   21fa8:	48 89 d5             	mov    %rdx,%rbp
+   21fab:	49 89 c5             	mov    %rax,%r13
+   21fae:	4c 8b 74 24 70       	mov    0x70(%rsp),%r14
+   21fb3:	4c 3b 74 24 60       	cmp    0x60(%rsp),%r14
+   21fb8:	0f 85 72 ff ff ff    	jne    21f30 <dp::main+0x30>
+   21fbe:	48 8d 7c 24 60       	lea    0x60(%rsp),%rdi
+   21fc3:	48 8d 35 7e 07 05 00 	lea    0x5077e(%rip),%rsi        # 72748 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3a8>
+   21fca:	e8 f1 22 00 00       	call   242c0 <alloc::raw_vec::RawVec<T,A>::grow_one>
+   21fcf:	e9 5c ff ff ff       	jmp    21f30 <dp::main+0x30>
+   21fd4:	48 8d bc 24 90 00 00 	lea    0x90(%rsp),%rdi
+   21fdb:	00 
+   21fdc:	ff 15 26 43 05 00    	call   *0x54326(%rip)        # 76308 <_DYNAMIC+0x2a0>
+   21fe2:	8b 84 24 98 00 00 00 	mov    0x98(%rsp),%eax
+   21fe9:	89 84 24 a8 00 00 00 	mov    %eax,0xa8(%rsp)
+   21ff0:	48 8b 84 24 90 00 00 	mov    0x90(%rsp),%rax
+   21ff7:	00 
+   21ff8:	48 89 84 24 a0 00 00 	mov    %rax,0xa0(%rsp)
+   21fff:	00 
+   22000:	8b ac 24 9c 00 00 00 	mov    0x9c(%rsp),%ebp
+   22007:	48 8d 7c 24 54       	lea    0x54(%rsp),%rdi
+   2200c:	4c 8d b4 24 a0 00 00 	lea    0xa0(%rsp),%r14
+   22013:	00 
+   22014:	4c 89 f6             	mov    %r14,%rsi
+   22017:	89 ea                	mov    %ebp,%edx
+   22019:	ff 15 f1 42 05 00    	call   *0x542f1(%rip)        # 76310 <_DYNAMIC+0x2a8>
+   2201f:	48 8d bc 24 9c 00 00 	lea    0x9c(%rsp),%rdi
+   22026:	00 
+   22027:	8b 5c 24 54          	mov    0x54(%rsp),%ebx
+   2202b:	f2 0f 10 44 24 58    	movsd  0x58(%rsp),%xmm0
+   22031:	0f 29 84 24 80 00 00 	movaps %xmm0,0x80(%rsp)
+   22038:	00 
+   22039:	48 c7 44 24 38 00 00 	movq   $0x0,0x38(%rsp)
+   22040:	00 00 
+   22042:	48 c7 44 24 40 01 00 	movq   $0x1,0x40(%rsp)
+   22049:	00 00 
+   2204b:	48 c7 44 24 48 00 00 	movq   $0x0,0x48(%rsp)
+   22052:	00 00 
+   22054:	b8 20 00 00 e0       	mov    $0xe0000020,%eax
+   22059:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+   2205e:	4c 8d 7c 24 38       	lea    0x38(%rsp),%r15
+   22063:	4c 89 7c 24 08       	mov    %r15,0x8(%rsp)
+   22068:	48 8d 05 e9 02 05 00 	lea    0x502e9(%rip),%rax        # 72358 <anon.07f4893ba3a8a42e24fb5deb4726c306.0.llvm.1823474535184149785>
+   2206f:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+   22074:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+   22079:	ff 15 29 42 05 00    	call   *0x54229(%rip)        # 762a8 <_DYNAMIC+0x240>
+   2207f:	84 c0                	test   %al,%al
+   22081:	0f 85 d3 02 00 00    	jne    2235a <dp::main+0x45a>
+   22087:	0f 10 44 24 38       	movups 0x38(%rsp),%xmm0
+   2208c:	0f 29 84 24 a0 00 00 	movaps %xmm0,0xa0(%rsp)
+   22093:	00 
+   22094:	48 8b 44 24 48       	mov    0x48(%rsp),%rax
+   22099:	48 89 84 24 b0 00 00 	mov    %rax,0xb0(%rsp)
+   220a0:	00 
+   220a1:	89 9c 24 f4 00 00 00 	mov    %ebx,0xf4(%rsp)
+   220a8:	c7 84 24 e8 00 00 00 	movl   $0x1,0xe8(%rsp)
+   220af:	01 00 00 00 
+   220b3:	0f 28 84 24 80 00 00 	movaps 0x80(%rsp),%xmm0
+   220ba:	00 
+   220bb:	0f 13 84 24 ec 00 00 	movlps %xmm0,0xec(%rsp)
+   220c2:	00 
+   220c3:	89 ac 24 b8 00 00 00 	mov    %ebp,0xb8(%rsp)
+   220ca:	48 8d 05 2f a7 fe ff 	lea    -0x158d1(%rip),%rax        # c800 <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x590>
+   220d1:	48 89 84 24 c0 00 00 	mov    %rax,0xc0(%rsp)
+   220d8:	00 
+   220d9:	48 c7 84 24 c8 00 00 	movq   $0x2,0xc8(%rsp)
+   220e0:	00 02 00 00 00 
+   220e5:	48 c7 84 24 d0 00 00 	movq   $0x8,0xd0(%rsp)
+   220ec:	00 08 00 00 00 
+   220f1:	48 c7 84 24 d8 00 00 	movq   $0x0,0xd8(%rsp)
+   220f8:	00 00 00 00 00 
+   220fd:	c6 84 24 e0 00 00 00 	movb   $0x0,0xe0(%rsp)
+   22104:	00 
+   22105:	4c 89 74 24 38       	mov    %r14,0x38(%rsp)
+   2210a:	48 8d 05 ef c7 ff ff 	lea    -0x3811(%rip),%rax        # 1e900 <<chrono::format::formatting::DelayedFormat<I> as core::fmt::Display>::fmt>
+   22111:	48 89 44 24 40       	mov    %rax,0x40(%rsp)
+   22116:	48 8d 05 73 05 05 00 	lea    0x50573(%rip),%rax        # 72690 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x2f0>
+   2211d:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   22122:	48 c7 44 24 10 02 00 	movq   $0x2,0x10(%rsp)
+   22129:	00 00 
+   2212b:	4c 89 7c 24 18       	mov    %r15,0x18(%rsp)
+   22130:	48 c7 44 24 20 01 00 	movq   $0x1,0x20(%rsp)
+   22137:	00 00 
+   22139:	48 c7 44 24 28 00 00 	movq   $0x0,0x28(%rsp)
+   22140:	00 00 
+   22142:	48 8d bc 24 00 01 00 	lea    0x100(%rsp),%rdi
+   22149:	00 
+   2214a:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+   2214f:	ff 15 c3 41 05 00    	call   *0x541c3(%rip)        # 76318 <_DYNAMIC+0x2b0>
+   22155:	48 b8 00 00 00 00 b6 	movabs $0x1b600000000,%rax
+   2215c:	01 00 00 
+   2215f:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   22164:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%rsp)
+   2216b:	00 
+   2216c:	66 c7 44 24 14 00 00 	movw   $0x0,0x14(%rsp)
+   22173:	c6 44 24 11 01       	movb   $0x1,0x11(%rsp)
+   22178:	c6 44 24 14 01       	movb   $0x1,0x14(%rsp)
+   2217d:	c6 44 24 13 01       	movb   $0x1,0x13(%rsp)
+   22182:	4c 8b bc 24 08 01 00 	mov    0x108(%rsp),%r15
+   22189:	00 
+   2218a:	48 8b 8c 24 10 01 00 	mov    0x110(%rsp),%rcx
+   22191:	00 
+   22192:	48 8d 7c 24 38       	lea    0x38(%rsp),%rdi
+   22197:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+   2219c:	4c 89 fa             	mov    %r15,%rdx
+   2219f:	ff 15 7b 41 05 00    	call   *0x5417b(%rip)        # 76320 <_DYNAMIC+0x2b8>
+   221a5:	48 8b b4 24 00 01 00 	mov    0x100(%rsp),%rsi
+   221ac:	00 
+   221ad:	48 85 f6             	test   %rsi,%rsi
+   221b0:	74 0e                	je     221c0 <dp::main+0x2c0>
+   221b2:	ba 01 00 00 00       	mov    $0x1,%edx
+   221b7:	4c 89 ff             	mov    %r15,%rdi
+   221ba:	ff 15 d0 40 05 00    	call   *0x540d0(%rip)        # 76290 <_DYNAMIC+0x228>
+   221c0:	83 7c 24 38 01       	cmpl   $0x1,0x38(%rsp)
+   221c5:	0f 84 b6 01 00 00    	je     22381 <dp::main+0x481>
+   221cb:	8b 44 24 3c          	mov    0x3c(%rsp),%eax
+   221cf:	89 44 24 54          	mov    %eax,0x54(%rsp)
+   221d3:	48 8d 05 ee 04 05 00 	lea    0x504ee(%rip),%rax        # 726c8 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x328>
+   221da:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   221df:	48 c7 44 24 10 01 00 	movq   $0x1,0x10(%rsp)
+   221e6:	00 00 
+   221e8:	48 c7 44 24 18 08 00 	movq   $0x8,0x18(%rsp)
+   221ef:	00 00 
+   221f1:	0f 57 c0             	xorps  %xmm0,%xmm0
+   221f4:	0f 11 44 24 20       	movups %xmm0,0x20(%rsp)
+   221f9:	48 8d 7c 24 54       	lea    0x54(%rsp),%rdi
+   221fe:	48 8d 74 24 08       	lea    0x8(%rsp),%rsi
+   22203:	e8 38 15 00 00       	call   23740 <std::io::Write::write_fmt>
+   22208:	48 85 c0             	test   %rax,%rax
+   2220b:	0f 85 a1 01 00 00    	jne    223b2 <dp::main+0x4b2>
+   22211:	48 8b 7c 24 68       	mov    0x68(%rsp),%rdi
+   22216:	4c 8b 6c 24 70       	mov    0x70(%rsp),%r13
+   2221b:	49 83 fd 02          	cmp    $0x2,%r13
+   2221f:	0f 83 b9 01 00 00    	jae    223de <dp::main+0x4de>
+   22225:	48 89 bc 24 80 00 00 	mov    %rdi,0x80(%rsp)
+   2222c:	00 
+   2222d:	48 8b 44 24 60       	mov    0x60(%rsp),%rax
+   22232:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+   22237:	4d 85 ed             	test   %r13,%r13
+   2223a:	0f 84 89 00 00 00    	je     222c9 <dp::main+0x3c9>
+   22240:	49 c1 e5 03          	shl    $0x3,%r13
+   22244:	31 db                	xor    %ebx,%ebx
+   22246:	4c 8b 35 db 40 05 00 	mov    0x540db(%rip),%r14        # 76328 <_DYNAMIC+0x2c0>
+   2224d:	4c 8d 3d 9c 04 05 00 	lea    0x5049c(%rip),%r15        # 726f0 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x350>
+   22254:	48 8d 6c 24 54       	lea    0x54(%rsp),%rbp
+   22259:	4c 8d 64 24 08       	lea    0x8(%rsp),%r12
+   2225e:	66 90                	xchg   %ax,%ax
+   22260:	48 8b 84 24 80 00 00 	mov    0x80(%rsp),%rax
+   22267:	00 
+   22268:	48 8b 04 18          	mov    (%rax,%rbx,1),%rax
+   2226c:	48 89 84 24 90 00 00 	mov    %rax,0x90(%rsp)
+   22273:	00 
+   22274:	48 8d 84 24 90 00 00 	lea    0x90(%rsp),%rax
    2227b:	00 
-   2227c:	48 89 f0             	mov    %rsi,%rax
-   2227f:	48 f7 d8             	neg    %rax
-   22282:	70 15                	jo     22299 <dp::main+0x3d9>
-   22284:	73 13                	jae    22299 <dp::main+0x3d9>
-   22286:	48 8b bc 24 c8 00 00 	mov    0xc8(%rsp),%rdi
-   2228d:	00 
-   2228e:	ba 01 00 00 00       	mov    $0x1,%edx
-   22293:	ff 15 47 3f 05 00    	call   *0x53f47(%rip)        # 761e0 <_DYNAMIC+0x228>
-   22299:	48 81 c4 18 01 00 00 	add    $0x118,%rsp
-   222a0:	5b                   	pop    %rbx
-   222a1:	41 5c                	pop    %r12
-   222a3:	41 5d                	pop    %r13
-   222a5:	41 5e                	pop    %r14
-   222a7:	41 5f                	pop    %r15
-   222a9:	5d                   	pop    %rbp
-   222aa:	c3                   	ret
-   222ab:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
-   222b0:	48 8d 3d 38 a5 fe ff 	lea    -0x15ac8(%rip),%rdi        # c7ef <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x59f>
-   222b7:	48 8d 0d f2 03 05 00 	lea    0x503f2(%rip),%rcx        # 726b0 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3a0>
-   222be:	4c 8d 05 bb 03 05 00 	lea    0x503bb(%rip),%r8        # 72680 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x370>
-   222c5:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
-   222ca:	be 2b 00 00 00       	mov    $0x2b,%esi
-   222cf:	ff 15 2b 3f 05 00    	call   *0x53f2b(%rip)        # 76200 <_DYNAMIC+0x248>
-   222d5:	e9 82 00 00 00       	jmp    2235c <dp::main+0x49c>
-   222da:	48 8d 3d 6f 85 fe ff 	lea    -0x17a91(%rip),%rdi        # a850 <anon.07f4893ba3a8a42e24fb5deb4726c306.1.llvm.1823474535184149785>
-   222e1:	48 8d 0d 28 00 05 00 	lea    0x50028(%rip),%rcx        # 72310 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785>
-   222e8:	4c 8d 05 09 00 05 00 	lea    0x50009(%rip),%r8        # 722f8 <anon.07f4893ba3a8a42e24fb5deb4726c306.3.llvm.1823474535184149785>
-   222ef:	48 8d 54 24 07       	lea    0x7(%rsp),%rdx
-   222f4:	be 37 00 00 00       	mov    $0x37,%esi
-   222f9:	ff 15 01 3f 05 00    	call   *0x53f01(%rip)        # 76200 <_DYNAMIC+0x248>
-   222ff:	eb 5b                	jmp    2235c <dp::main+0x49c>
-   22301:	48 8b 44 24 40       	mov    0x40(%rsp),%rax
-   22306:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
-   2230b:	48 8d 3d dd a4 fe ff 	lea    -0x15b23(%rip),%rdi        # c7ef <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x59f>
-   22312:	48 8d 0d 97 03 05 00 	lea    0x50397(%rip),%rcx        # 726b0 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3a0>
-   22319:	4c 8d 05 00 03 05 00 	lea    0x50300(%rip),%r8        # 72620 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x310>
-   22320:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
-   22325:	be 2b 00 00 00       	mov    $0x2b,%esi
-   2232a:	ff 15 d0 3e 05 00    	call   *0x53ed0(%rip)        # 76200 <_DYNAMIC+0x248>
-   22330:	eb 2a                	jmp    2235c <dp::main+0x49c>
-   22332:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
-   22337:	48 8d 3d b1 a4 fe ff 	lea    -0x15b4f(%rip),%rdi        # c7ef <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x59f>
-   2233e:	48 8d 0d 6b 03 05 00 	lea    0x5036b(%rip),%rcx        # 726b0 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3a0>
-   22345:	4c 8d 05 fc 02 05 00 	lea    0x502fc(%rip),%r8        # 72648 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x338>
-   2234c:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
-   22351:	be 2b 00 00 00       	mov    $0x2b,%esi
-   22356:	ff 15 a4 3e 05 00    	call   *0x53ea4(%rip)        # 76200 <_DYNAMIC+0x248>
-   2235c:	0f 0b                	ud2
-   2235e:	49 83 fd 15          	cmp    $0x15,%r13
-   22362:	73 4e                	jae    223b2 <dp::main+0x4f2>
-   22364:	4a 8d 04 ef          	lea    (%rdi,%r13,8),%rax
-   22368:	48 8d 4f 08          	lea    0x8(%rdi),%rcx
-   2236c:	ba 08 00 00 00       	mov    $0x8,%edx
-   22371:	eb 13                	jmp    22386 <dp::main+0x4c6>
-   22373:	49 89 f9             	mov    %rdi,%r9
-   22376:	49 89 31             	mov    %rsi,(%r9)
-   22379:	48 83 c1 08          	add    $0x8,%rcx
-   2237d:	48 83 c2 08          	add    $0x8,%rdx
-   22381:	48 39 c1             	cmp    %rax,%rcx
-   22384:	74 39                	je     223bf <dp::main+0x4ff>
-   22386:	4c 8b 41 f8          	mov    -0x8(%rcx),%r8
-   2238a:	48 8b 31             	mov    (%rcx),%rsi
-   2238d:	4c 39 c6             	cmp    %r8,%rsi
-   22390:	73 e7                	jae    22379 <dp::main+0x4b9>
-   22392:	49 89 d1             	mov    %rdx,%r9
-   22395:	4e 89 04 0f          	mov    %r8,(%rdi,%r9,1)
-   22399:	49 83 f9 08          	cmp    $0x8,%r9
-   2239d:	74 d4                	je     22373 <dp::main+0x4b3>
-   2239f:	4e 8b 44 0f f0       	mov    -0x10(%rdi,%r9,1),%r8
-   223a4:	49 83 c1 f8          	add    $0xfffffffffffffff8,%r9
-   223a8:	4c 39 c6             	cmp    %r8,%rsi
-   223ab:	72 e8                	jb     22395 <dp::main+0x4d5>
-   223ad:	49 01 f9             	add    %rdi,%r9
-   223b0:	eb c4                	jmp    22376 <dp::main+0x4b6>
-   223b2:	48 8d 54 24 07       	lea    0x7(%rsp),%rdx
-   223b7:	4c 89 ee             	mov    %r13,%rsi
-   223ba:	e8 91 02 00 00       	call   22650 <core::slice::sort::stable::driftsort_main>
-   223bf:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
-   223c4:	48 89 84 24 80 00 00 	mov    %rax,0x80(%rsp)
-   223cb:	00 
-   223cc:	4c 8b 6c 24 70       	mov    0x70(%rsp),%r13
-   223d1:	48 8b 44 24 60       	mov    0x60(%rsp),%rax
-   223d6:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
-   223db:	4d 85 ed             	test   %r13,%r13
-   223de:	0f 85 de fd ff ff    	jne    221c2 <dp::main+0x302>
-   223e4:	e9 60 fe ff ff       	jmp    22249 <dp::main+0x389>
-   223e9:	48 89 c3             	mov    %rax,%rbx
-   223ec:	eb 50                	jmp    2243e <dp::main+0x57e>
-   223ee:	48 89 c3             	mov    %rax,%rbx
-   223f1:	48 8b b4 24 a8 00 00 	mov    0xa8(%rsp),%rsi
-   223f8:	00 
-   223f9:	40 b5 01             	mov    $0x1,%bpl
-   223fc:	48 85 f6             	test   %rsi,%rsi
-   223ff:	0f 84 b5 00 00 00    	je     224ba <dp::main+0x5fa>
-   22405:	ba 01 00 00 00       	mov    $0x1,%edx
-   2240a:	4c 89 ff             	mov    %r15,%rdi
-   2240d:	ff 15 cd 3d 05 00    	call   *0x53dcd(%rip)        # 761e0 <_DYNAMIC+0x228>
-   22413:	e9 a2 00 00 00       	jmp    224ba <dp::main+0x5fa>
-   22418:	48 89 c3             	mov    %rax,%rbx
-   2241b:	eb 39                	jmp    22456 <dp::main+0x596>
-   2241d:	eb 00                	jmp    2241f <dp::main+0x55f>
-   2241f:	48 89 c3             	mov    %rax,%rbx
-   22422:	e9 c0 00 00 00       	jmp    224e7 <dp::main+0x627>
-   22427:	48 89 c3             	mov    %rax,%rbx
-   2242a:	48 8b 74 24 78       	mov    0x78(%rsp),%rsi
-   2242f:	eb 61                	jmp    22492 <dp::main+0x5d2>
-   22431:	48 89 c3             	mov    %rax,%rbx
-   22434:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
-   22439:	e8 62 01 00 00       	call   225a0 <core::ptr::drop_in_place<std::io::error::Error>>
-   2243e:	40 b5 01             	mov    $0x1,%bpl
-   22441:	eb 6d                	jmp    224b0 <dp::main+0x5f0>
-   22443:	ff 15 3f 3e 05 00    	call   *0x53e3f(%rip)        # 76288 <_DYNAMIC+0x2d0>
-   22449:	48 89 c3             	mov    %rax,%rbx
-   2244c:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
-   22451:	e8 4a 01 00 00       	call   225a0 <core::ptr::drop_in_place<std::io::error::Error>>
-   22456:	40 b5 01             	mov    $0x1,%bpl
-   22459:	eb 5f                	jmp    224ba <dp::main+0x5fa>
-   2245b:	ff 15 27 3e 05 00    	call   *0x53e27(%rip)        # 76288 <_DYNAMIC+0x2d0>
-   22461:	48 89 c3             	mov    %rax,%rbx
-   22464:	48 8b 74 24 38       	mov    0x38(%rsp),%rsi
-   22469:	48 85 f6             	test   %rsi,%rsi
-   2246c:	74 79                	je     224e7 <dp::main+0x627>
-   2246e:	48 8b 7c 24 40       	mov    0x40(%rsp),%rdi
-   22473:	ba 01 00 00 00       	mov    $0x1,%edx
-   22478:	ff 15 62 3d 05 00    	call   *0x53d62(%rip)        # 761e0 <_DYNAMIC+0x228>
-   2247e:	eb 67                	jmp    224e7 <dp::main+0x627>
-   22480:	48 89 c3             	mov    %rax,%rbx
-   22483:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
-   22488:	e8 13 01 00 00       	call   225a0 <core::ptr::drop_in_place<std::io::error::Error>>
-   2248d:	48 8b 74 24 78       	mov    0x78(%rsp),%rsi
-   22492:	48 85 f6             	test   %rsi,%rsi
-   22495:	74 17                	je     224ae <dp::main+0x5ee>
-   22497:	48 c1 e6 03          	shl    $0x3,%rsi
-   2249b:	ba 08 00 00 00       	mov    $0x8,%edx
-   224a0:	48 8b bc 24 80 00 00 	mov    0x80(%rsp),%rdi
-   224a7:	00 
-   224a8:	ff 15 32 3d 05 00    	call   *0x53d32(%rip)        # 761e0 <_DYNAMIC+0x228>
-   224ae:	31 ed                	xor    %ebp,%ebp
-   224b0:	8b 7c 24 54          	mov    0x54(%rsp),%edi
-   224b4:	ff 15 c6 3d 05 00    	call   *0x53dc6(%rip)        # 76280 <close@GLIBC_2.2.5>
-   224ba:	48 8b b4 24 c0 00 00 	mov    0xc0(%rsp),%rsi
-   224c1:	00 
-   224c2:	48 8d 04 75 00 00 00 	lea    0x0(,%rsi,2),%rax
-   224c9:	00 
-   224ca:	48 85 c0             	test   %rax,%rax
-   224cd:	74 13                	je     224e2 <dp::main+0x622>
-   224cf:	48 8b bc 24 c8 00 00 	mov    0xc8(%rsp),%rdi
-   224d6:	00 
-   224d7:	ba 01 00 00 00       	mov    $0x1,%edx
-   224dc:	ff 15 fe 3c 05 00    	call   *0x53cfe(%rip)        # 761e0 <_DYNAMIC+0x228>
-   224e2:	40 84 ed             	test   %bpl,%bpl
-   224e5:	74 0a                	je     224f1 <dp::main+0x631>
-   224e7:	48 8b 74 24 60       	mov    0x60(%rsp),%rsi
-   224ec:	48 85 f6             	test   %rsi,%rsi
-   224ef:	75 08                	jne    224f9 <dp::main+0x639>
-   224f1:	48 89 df             	mov    %rbx,%rdi
-   224f4:	e8 87 ed 04 00       	call   71280 <_Unwind_Resume@plt>
-   224f9:	48 8b 7c 24 68       	mov    0x68(%rsp),%rdi
-   224fe:	48 c1 e6 03          	shl    $0x3,%rsi
-   22502:	ba 08 00 00 00       	mov    $0x8,%edx
-   22507:	ff 15 d3 3c 05 00    	call   *0x53cd3(%rip)        # 761e0 <_DYNAMIC+0x228>
-   2250d:	48 89 df             	mov    %rbx,%rdi
-   22510:	e8 6b ed 04 00       	call   71280 <_Unwind_Resume@plt>
-   22515:	ff 15 6d 3d 05 00    	call   *0x53d6d(%rip)        # 76288 <_DYNAMIC+0x2d0>
+   2227c:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+   22281:	4c 89 74 24 40       	mov    %r14,0x40(%rsp)
+   22286:	4c 89 7c 24 08       	mov    %r15,0x8(%rsp)
+   2228b:	48 c7 44 24 10 02 00 	movq   $0x2,0x10(%rsp)
+   22292:	00 00 
+   22294:	48 c7 44 24 28 00 00 	movq   $0x0,0x28(%rsp)
+   2229b:	00 00 
+   2229d:	48 8d 44 24 38       	lea    0x38(%rsp),%rax
+   222a2:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+   222a7:	48 c7 44 24 20 01 00 	movq   $0x1,0x20(%rsp)
+   222ae:	00 00 
+   222b0:	48 89 ef             	mov    %rbp,%rdi
+   222b3:	4c 89 e6             	mov    %r12,%rsi
+   222b6:	e8 85 14 00 00       	call   23740 <std::io::Write::write_fmt>
+   222bb:	48 85 c0             	test   %rax,%rax
+   222be:	75 6b                	jne    2232b <dp::main+0x42b>
+   222c0:	48 83 c3 08          	add    $0x8,%rbx
+   222c4:	49 39 dd             	cmp    %rbx,%r13
+   222c7:	75 97                	jne    22260 <dp::main+0x360>
+   222c9:	48 8b 74 24 78       	mov    0x78(%rsp),%rsi
+   222ce:	48 85 f6             	test   %rsi,%rsi
+   222d1:	74 17                	je     222ea <dp::main+0x3ea>
+   222d3:	48 c1 e6 03          	shl    $0x3,%rsi
+   222d7:	ba 08 00 00 00       	mov    $0x8,%edx
+   222dc:	48 8b bc 24 80 00 00 	mov    0x80(%rsp),%rdi
+   222e3:	00 
+   222e4:	ff 15 a6 3f 05 00    	call   *0x53fa6(%rip)        # 76290 <_DYNAMIC+0x228>
+   222ea:	8b 7c 24 54          	mov    0x54(%rsp),%edi
+   222ee:	ff 15 3c 40 05 00    	call   *0x5403c(%rip)        # 76330 <close@GLIBC_2.2.5>
+   222f4:	48 8b b4 24 a0 00 00 	mov    0xa0(%rsp),%rsi
+   222fb:	00 
+   222fc:	48 89 f0             	mov    %rsi,%rax
+   222ff:	48 f7 d8             	neg    %rax
+   22302:	70 15                	jo     22319 <dp::main+0x419>
+   22304:	73 13                	jae    22319 <dp::main+0x419>
+   22306:	48 8b bc 24 a8 00 00 	mov    0xa8(%rsp),%rdi
+   2230d:	00 
+   2230e:	ba 01 00 00 00       	mov    $0x1,%edx
+   22313:	ff 15 77 3f 05 00    	call   *0x53f77(%rip)        # 76290 <_DYNAMIC+0x228>
+   22319:	48 81 c4 18 01 00 00 	add    $0x118,%rsp
+   22320:	5b                   	pop    %rbx
+   22321:	41 5c                	pop    %r12
+   22323:	41 5d                	pop    %r13
+   22325:	41 5e                	pop    %r14
+   22327:	41 5f                	pop    %r15
+   22329:	5d                   	pop    %rbp
+   2232a:	c3                   	ret
+   2232b:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   22330:	48 8d 3d d8 a4 fe ff 	lea    -0x15b28(%rip),%rdi        # c80f <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x59f>
+   22337:	48 8d 0d 22 04 05 00 	lea    0x50422(%rip),%rcx        # 72760 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3c0>
+   2233e:	4c 8d 05 cb 03 05 00 	lea    0x503cb(%rip),%r8        # 72710 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x370>
+   22345:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
+   2234a:	be 2b 00 00 00       	mov    $0x2b,%esi
+   2234f:	ff 15 5b 3f 05 00    	call   *0x53f5b(%rip)        # 762b0 <_DYNAMIC+0x248>
+   22355:	e9 82 00 00 00       	jmp    223dc <dp::main+0x4dc>
+   2235a:	48 8d 3d 0f 85 fe ff 	lea    -0x17af1(%rip),%rdi        # a870 <anon.07f4893ba3a8a42e24fb5deb4726c306.1.llvm.1823474535184149785>
+   22361:	48 8d 0d 38 00 05 00 	lea    0x50038(%rip),%rcx        # 723a0 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785>
+   22368:	4c 8d 05 19 00 05 00 	lea    0x50019(%rip),%r8        # 72388 <anon.07f4893ba3a8a42e24fb5deb4726c306.3.llvm.1823474535184149785>
+   2236f:	48 8d 54 24 07       	lea    0x7(%rsp),%rdx
+   22374:	be 37 00 00 00       	mov    $0x37,%esi
+   22379:	ff 15 31 3f 05 00    	call   *0x53f31(%rip)        # 762b0 <_DYNAMIC+0x248>
+   2237f:	eb 5b                	jmp    223dc <dp::main+0x4dc>
+   22381:	48 8b 44 24 40       	mov    0x40(%rsp),%rax
+   22386:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   2238b:	48 8d 3d 7d a4 fe ff 	lea    -0x15b83(%rip),%rdi        # c80f <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x59f>
+   22392:	48 8d 0d c7 03 05 00 	lea    0x503c7(%rip),%rcx        # 72760 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3c0>
+   22399:	4c 8d 05 10 03 05 00 	lea    0x50310(%rip),%r8        # 726b0 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x310>
+   223a0:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
+   223a5:	be 2b 00 00 00       	mov    $0x2b,%esi
+   223aa:	ff 15 00 3f 05 00    	call   *0x53f00(%rip)        # 762b0 <_DYNAMIC+0x248>
+   223b0:	eb 2a                	jmp    223dc <dp::main+0x4dc>
+   223b2:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+   223b7:	48 8d 3d 51 a4 fe ff 	lea    -0x15baf(%rip),%rdi        # c80f <anon.4f08dfccf42f9d3ce1bdc1bda3556c0d.37.llvm.12434742115555868624+0x59f>
+   223be:	48 8d 0d 9b 03 05 00 	lea    0x5039b(%rip),%rcx        # 72760 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x3c0>
+   223c5:	4c 8d 05 0c 03 05 00 	lea    0x5030c(%rip),%r8        # 726d8 <anon.07f4893ba3a8a42e24fb5deb4726c306.4.llvm.1823474535184149785+0x338>
+   223cc:	48 8d 54 24 08       	lea    0x8(%rsp),%rdx
+   223d1:	be 2b 00 00 00       	mov    $0x2b,%esi
+   223d6:	ff 15 d4 3e 05 00    	call   *0x53ed4(%rip)        # 762b0 <_DYNAMIC+0x248>
+   223dc:	0f 0b                	ud2
+   223de:	49 83 fd 15          	cmp    $0x15,%r13
+   223e2:	73 4e                	jae    22432 <dp::main+0x532>
+   223e4:	4a 8d 04 ef          	lea    (%rdi,%r13,8),%rax
+   223e8:	48 8d 4f 08          	lea    0x8(%rdi),%rcx
+   223ec:	ba 08 00 00 00       	mov    $0x8,%edx
+   223f1:	eb 13                	jmp    22406 <dp::main+0x506>
+   223f3:	49 89 f9             	mov    %rdi,%r9
+   223f6:	49 89 31             	mov    %rsi,(%r9)
+   223f9:	48 83 c1 08          	add    $0x8,%rcx
+   223fd:	48 83 c2 08          	add    $0x8,%rdx
+   22401:	48 39 c1             	cmp    %rax,%rcx
+   22404:	74 39                	je     2243f <dp::main+0x53f>
+   22406:	4c 8b 41 f8          	mov    -0x8(%rcx),%r8
+   2240a:	48 8b 31             	mov    (%rcx),%rsi
+   2240d:	4c 39 c6             	cmp    %r8,%rsi
+   22410:	73 e7                	jae    223f9 <dp::main+0x4f9>
+   22412:	49 89 d1             	mov    %rdx,%r9
+   22415:	4e 89 04 0f          	mov    %r8,(%rdi,%r9,1)
+   22419:	49 83 f9 08          	cmp    $0x8,%r9
+   2241d:	74 d4                	je     223f3 <dp::main+0x4f3>
+   2241f:	4e 8b 44 0f f0       	mov    -0x10(%rdi,%r9,1),%r8
+   22424:	49 83 c1 f8          	add    $0xfffffffffffffff8,%r9
+   22428:	4c 39 c6             	cmp    %r8,%rsi
+   2242b:	72 e8                	jb     22415 <dp::main+0x515>
+   2242d:	49 01 f9             	add    %rdi,%r9
+   22430:	eb c4                	jmp    223f6 <dp::main+0x4f6>
+   22432:	48 8d 54 24 07       	lea    0x7(%rsp),%rdx
+   22437:	4c 89 ee             	mov    %r13,%rsi
+   2243a:	e8 91 02 00 00       	call   226d0 <core::slice::sort::stable::driftsort_main>
+   2243f:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
+   22444:	48 89 84 24 80 00 00 	mov    %rax,0x80(%rsp)
+   2244b:	00 
+   2244c:	4c 8b 6c 24 70       	mov    0x70(%rsp),%r13
+   22451:	48 8b 44 24 60       	mov    0x60(%rsp),%rax
+   22456:	48 89 44 24 78       	mov    %rax,0x78(%rsp)
+   2245b:	4d 85 ed             	test   %r13,%r13
+   2245e:	0f 85 dc fd ff ff    	jne    22240 <dp::main+0x340>
+   22464:	e9 60 fe ff ff       	jmp    222c9 <dp::main+0x3c9>
+   22469:	48 89 c3             	mov    %rax,%rbx
+   2246c:	eb 50                	jmp    224be <dp::main+0x5be>
+   2246e:	48 89 c3             	mov    %rax,%rbx
+   22471:	48 8b b4 24 00 01 00 	mov    0x100(%rsp),%rsi
+   22478:	00 
+   22479:	40 b5 01             	mov    $0x1,%bpl
+   2247c:	48 85 f6             	test   %rsi,%rsi
+   2247f:	0f 84 b5 00 00 00    	je     2253a <dp::main+0x63a>
+   22485:	ba 01 00 00 00       	mov    $0x1,%edx
+   2248a:	4c 89 ff             	mov    %r15,%rdi
+   2248d:	ff 15 fd 3d 05 00    	call   *0x53dfd(%rip)        # 76290 <_DYNAMIC+0x228>
+   22493:	e9 a2 00 00 00       	jmp    2253a <dp::main+0x63a>
+   22498:	48 89 c3             	mov    %rax,%rbx
+   2249b:	eb 39                	jmp    224d6 <dp::main+0x5d6>
+   2249d:	eb 0a                	jmp    224a9 <dp::main+0x5a9>
+   2249f:	48 89 c3             	mov    %rax,%rbx
+   224a2:	48 8b 74 24 78       	mov    0x78(%rsp),%rsi
+   224a7:	eb 69                	jmp    22512 <dp::main+0x612>
+   224a9:	48 89 c3             	mov    %rax,%rbx
+   224ac:	e9 b6 00 00 00       	jmp    22567 <dp::main+0x667>
+   224b1:	48 89 c3             	mov    %rax,%rbx
+   224b4:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+   224b9:	e8 62 01 00 00       	call   22620 <core::ptr::drop_in_place<std::io::error::Error>>
+   224be:	40 b5 01             	mov    $0x1,%bpl
+   224c1:	eb 6d                	jmp    22530 <dp::main+0x630>
+   224c3:	ff 15 6f 3e 05 00    	call   *0x53e6f(%rip)        # 76338 <_DYNAMIC+0x2d0>
+   224c9:	48 89 c3             	mov    %rax,%rbx
+   224cc:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+   224d1:	e8 4a 01 00 00       	call   22620 <core::ptr::drop_in_place<std::io::error::Error>>
+   224d6:	40 b5 01             	mov    $0x1,%bpl
+   224d9:	eb 5f                	jmp    2253a <dp::main+0x63a>
+   224db:	ff 15 57 3e 05 00    	call   *0x53e57(%rip)        # 76338 <_DYNAMIC+0x2d0>
+   224e1:	48 89 c3             	mov    %rax,%rbx
+   224e4:	48 8b 74 24 38       	mov    0x38(%rsp),%rsi
+   224e9:	48 85 f6             	test   %rsi,%rsi
+   224ec:	74 79                	je     22567 <dp::main+0x667>
+   224ee:	48 8b 7c 24 40       	mov    0x40(%rsp),%rdi
+   224f3:	ba 01 00 00 00       	mov    $0x1,%edx
+   224f8:	ff 15 92 3d 05 00    	call   *0x53d92(%rip)        # 76290 <_DYNAMIC+0x228>
+   224fe:	eb 67                	jmp    22567 <dp::main+0x667>
+   22500:	48 89 c3             	mov    %rax,%rbx
+   22503:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+   22508:	e8 13 01 00 00       	call   22620 <core::ptr::drop_in_place<std::io::error::Error>>
+   2250d:	48 8b 74 24 78       	mov    0x78(%rsp),%rsi
+   22512:	48 85 f6             	test   %rsi,%rsi
+   22515:	74 17                	je     2252e <dp::main+0x62e>
+   22517:	48 c1 e6 03          	shl    $0x3,%rsi
+   2251b:	ba 08 00 00 00       	mov    $0x8,%edx
+   22520:	48 8b bc 24 80 00 00 	mov    0x80(%rsp),%rdi
+   22527:	00 
+   22528:	ff 15 62 3d 05 00    	call   *0x53d62(%rip)        # 76290 <_DYNAMIC+0x228>
+   2252e:	31 ed                	xor    %ebp,%ebp
+   22530:	8b 7c 24 54          	mov    0x54(%rsp),%edi
+   22534:	ff 15 f6 3d 05 00    	call   *0x53df6(%rip)        # 76330 <close@GLIBC_2.2.5>
+   2253a:	48 8b b4 24 a0 00 00 	mov    0xa0(%rsp),%rsi
+   22541:	00 
+   22542:	48 8d 04 75 00 00 00 	lea    0x0(,%rsi,2),%rax
+   22549:	00 
+   2254a:	48 85 c0             	test   %rax,%rax
+   2254d:	74 13                	je     22562 <dp::main+0x662>
+   2254f:	48 8b bc 24 a8 00 00 	mov    0xa8(%rsp),%rdi
+   22556:	00 
+   22557:	ba 01 00 00 00       	mov    $0x1,%edx
+   2255c:	ff 15 2e 3d 05 00    	call   *0x53d2e(%rip)        # 76290 <_DYNAMIC+0x228>
+   22562:	40 84 ed             	test   %bpl,%bpl
+   22565:	74 0a                	je     22571 <dp::main+0x671>
+   22567:	48 8b 74 24 60       	mov    0x60(%rsp),%rsi
+   2256c:	48 85 f6             	test   %rsi,%rsi
+   2256f:	75 08                	jne    22579 <dp::main+0x679>
+   22571:	48 89 df             	mov    %rbx,%rdi
+   22574:	e8 97 ed 04 00       	call   71310 <_Unwind_Resume@plt>
+   22579:	48 8b 7c 24 68       	mov    0x68(%rsp),%rdi
+   2257e:	48 c1 e6 03          	shl    $0x3,%rsi
+   22582:	ba 08 00 00 00       	mov    $0x8,%edx
+   22587:	ff 15 03 3d 05 00    	call   *0x53d03(%rip)        # 76290 <_DYNAMIC+0x228>
+   2258d:	48 89 df             	mov    %rbx,%rdi
+   22590:	e8 7b ed 04 00       	call   71310 <_Unwind_Resume@plt>
+   22595:	ff 15 9d 3d 05 00    	call   *0x53d9d(%rip)        # 76338 <_DYNAMIC+0x2d0>
 
 Disassembly of section .init:
 

@@ -20,7 +20,7 @@ fn main() {
         let latency = unsafe {
             let start = _rdtsc();
 
-            black_box(static_dispatch(&payload_thirty_two));
+            static_dispatch(black_box(&payload_thirty_two));
 
             let end = _rdtsc();
 
@@ -45,12 +45,10 @@ fn main() {
     }
 }
 
-#[allow(unused)]
 fn static_dispatch(payload: &impl Payload) {
-    payload.run()
+    payload.run();
 }
 
-#[allow(unused)]
 fn dynamic_dispatch(payload: &dyn Payload) {
-    payload.run()
+    payload.run();
 }
